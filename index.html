@@ -44,9 +44,6 @@
     ================================================== -->
     <div id="page" class="s-pagewrap ss-home">
 
-
-        <!-- # site header 
-        ================================================== -->
         <header class="s-header">
 
             <div class="row s-header__inner width-sixteen-col">
@@ -62,21 +59,35 @@
                 </div> <!-- end s-header__block -->
 
                 <nav class="s-header__nav">
-    
+
                     <ul class="s-header__menu-links">
+                        <li class="current"><a href="index.html">Startseite</a></li>
                         <li><a href="about.html">Über mich</a></li>
-                        <li><a href="cv.html">Lebenslauf</a></li>
                         <li><a href="projects.html">Projekte</a></li>
                         <li><a href="contact.html">Kontakt</a></li>
                     </ul> <!-- s-header__menu-links -->
 
                     <div class="s-header__contact">
-                        <a href="contact.html" class="btn btn--primary s-header__contact-btn">Lass uns zusammenarbeiten</a>
+                        <button class="btn btn--primary s-header__contact-btn btn-open-pdf">Lebenslauf anzeigen</button>
                     </div> <!-- s-header__contact -->
-    
+
                 </nav> <!-- end s-header__nav -->
 
             </div> <!-- end s-header__inner -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Event-Listener für den Klick auf den Button
+                    document.querySelector(".btn-open-pdf").addEventListener("click", function() {
+                        // Öffnen des Popup-Fensters mit der PDF-Datei
+                        var popup = window.open("https://github.com/iamrat2s/Unterlagen/blob/main/Unterlagen/lebenslauf.pdf", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=600");
+                        if (popup) {
+                            popup.focus();
+                        } else {
+                            alert("Das Popup-Fenster wurde blockiert. Bitte erlauben Sie Popup-Fenster in Ihrem Browser.");
+                        }
+                    });
+                });
+            </script>
 
         </header> <!-- end s-header -->
 
@@ -280,8 +291,8 @@
                 <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
                     <h3>Site Links</h3>
                     <ul class="link-list">
+                        <li><a href="index.html">Startseite</a></li>
                         <li><a href="about.html">Über mich</a></li>
-                        <li><a href="cv.html">Lebenslauf</a></li>
                         <li><a href="projects.html">Projekte</a></li>
                         <li><a href="contact.html">Kontakt</a></li>
                     </ul>
